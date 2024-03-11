@@ -1,5 +1,5 @@
 {
-    'name': "Todo App",
+    'name': "todo App",
     'summary': """ """,
     'description': """ """,
     'author': "Shahd Ahmed",
