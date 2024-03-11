@@ -1,0 +1,48 @@
+<odoo>
+    <record id="book_tree_view" model="ir.ui.view">
+        <field name="name">book.tree.view</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <tree >
+                <field name="name"/>
+                <field name="code"/>
+                <field name="published_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="book_form_view" model="ir.ui.view">
+        <field name="name">book.form.view</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form >
+                <sheet>
+                    <group>
+                        <group string="General Info.">
+                            <field name="name"/>
+                            <field name="code" />
+                        </group>
+                        <group string="Additional Info.">
+                            <field name="published_date"/>
+                            <field name="active" />
+                            <field name="image" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="library_book_action" model="ir.actions.act_window">
+        <field name="name">Library Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menuitem_library_book"
+              name="Books"
+              parent="menu_root_book"
+              action="library_book_action"/>
+</odoo>
